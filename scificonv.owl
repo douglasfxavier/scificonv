@@ -1671,23 +1671,6 @@ Legend:
     
 
 
-    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#p1 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#p1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
-        <hasSpeaker rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person1"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#p2 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#p2">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#panelsession1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#panelsession1">

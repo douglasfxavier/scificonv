@@ -215,6 +215,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasSpeaker">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#isSpeakerOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
@@ -790,6 +791,12 @@ Legend:
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasGuestOfHonour"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#GuestOfHonour"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Reading</rdfs:label>
         <skos:definition xml:lang="en">Slot in the convention programme for the participants to read science fiction books and comics.</skos:definition>
     </owl:Class>
@@ -839,6 +846,12 @@ Legend:
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#isSpeakerOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Talk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Speaker</rdfs:label>
         <skos:definition xml:lang="en">According to the Cambridge Dictionary, it is &apos;a person who gives a speech at a public event&apos;.</skos:definition>
         <skos:definition xml:lang="en">According to the Oxford Dictionary, it is &apos;a person who delivers a speech or lecture&apos;.</skos:definition>
@@ -870,6 +883,12 @@ Legend:
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasSpeaker"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Speaker"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Talk</rdfs:label>
         <skos:definition xml:lang="en">One of the meanings, according to the Oxford Dictionary, is &quot;an informal address or lecture&quot;. As in TED, the world wide conference, talks are short informative and creative presentations, sometimes with a bit of humour.</skos:definition>
         <skos:definition xml:lang="en">The triple below represents the sentence &apos;The talk 1 has as speaker Neil deGrasse Tyson&apos;:
@@ -937,6 +956,12 @@ Legend:
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasInstructor"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Instructor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Among the programme items, this is the one where the participants reunite to get hands-on.</rdfs:comment>
         <rdfs:label xml:lang="en">Workshop</rdfs:label>
         <skos:definition xml:lang="en">According to the Oxford Dictionary, it is &quot;a meeting at which a group of people engage in intensive discussion and activity on a particular subject or project.</skos:definition>
@@ -1506,6 +1531,7 @@ Legend:
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Reading2">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Reading"/>
         <hasGuestOfHonour rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person1"/>
+        <hasGuestOfHonour rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person6"/>
         <onTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Room102"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reading of the book &apos;Fire Bringer&apos;, by David Clements</dcterms:title>
@@ -1649,9 +1675,7 @@ Legend:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#p1">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
-        <hasModerator rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person4"/>
-        <hasPanellist rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person7"/>
-        <hasPanellist rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person8"/>
+        <hasSpeaker rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person1"/>
     </owl:NamedIndividual>
     
 
@@ -1671,6 +1695,7 @@ Legend:
         <hasModerator rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person3"/>
         <hasPanellist rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person1"/>
         <hasPanellist rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person2"/>
+        <hasPanellist rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person6"/>
         <onTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ScienceTrack"/>
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B4Room201"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Representations of science in the fiction literature</dcterms:title>
@@ -1745,7 +1770,7 @@ Legend:
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person1">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
-        <foaf:name>David Clements</foaf:name>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David Clements</foaf:name>
         <rdfs:label>David Clements</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1757,7 +1782,7 @@ Legend:
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
-        <foaf:name>Karen Cars</foaf:name>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Karen Cars</foaf:name>
         <rdfs:label>Karen Cars</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1963,7 +1988,7 @@ Legend:
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person6">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
-        <foaf:name>Maria Silva</foaf:name>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maria Silva</foaf:name>
         <rdfs:label>Maria Silva</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2205,8 +2230,46 @@ Legend:
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#PoliticsTrack"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ScienceTrack"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ScienceTrack"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person10"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person11"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person12"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person13"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person14"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person15"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person16"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person17"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person18"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person19"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person20"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person21"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person22"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person23"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person24"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person25"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person5"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person6"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person7"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person8"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person9"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>

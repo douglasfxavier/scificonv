@@ -14,8 +14,8 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/">
     <owl:Ontology rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv">
         <skos:definition xml:lang="en">Scificonv is an ontology created for describing data of a science fiction convention. It contains the main concepts found in the most popular events from the same category..</skos:definition>
-        <dcterms:licence xml:lang="en">https://creativecommons.org/licenses/by/4.0/</dcterms:licence>
         <rdfs:comment xml:lang="en">Scificonv reuses terms from some well-known ontologies: foaf, dcterms, skos and time.</rdfs:comment>
+        <dcterms:licence xml:lang="en">https://creativecommons.org/licenses/by/4.0/</dcterms:licence>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v.1[beta]</owl:versionInfo>
         <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Douglas Xavier</dcterms:creator>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scificonv Ontology v.1</rdfs:label>
@@ -667,24 +667,32 @@ Legend:
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasPanellist"/>
-                                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                                <owl:onClass rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Panellist"/>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasModerator"/>
-                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                                <owl:onClass rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Moderator"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasPanellist"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Panellist"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasModerator"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Moderator"/>
+                    </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasModerator"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Moderator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasPanellist"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Panellist"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Panel Session</rdfs:label>
         <skos:definition xml:lang="en">Debate event within the convention that takes place in an auditorium, and the participants can ask the panellists some questions.</skos:definition>
     </owl:Class>
@@ -1641,8 +1649,8 @@ Legend:
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#p1">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
         <hasModerator rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person4"/>
+        <hasPanellist rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person7"/>
         <hasPanellist rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person8"/>
-        <hasPanellist rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person9"/>
     </owl:NamedIndividual>
     
 
@@ -2199,6 +2207,16 @@ Legend:
             <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#PoliticsTrack"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ScienceTrack"/>
         </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasGuestOfHonour"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasInstructor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasModerator"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasPanellist"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasSpeaker"/>
+        </owl:members>
     </rdf:Description>
 </rdf:RDF>
 

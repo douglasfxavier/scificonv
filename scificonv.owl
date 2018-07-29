@@ -475,6 +475,7 @@ Legend:
     <!-- http://purl.org/dc/terms/title -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -501,6 +502,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#isKeynote -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#isKeynote">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Talk"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment xml:lang="en">According to the Cambridge Dictionary, a keynote is &quot;the most important or most emphasized part of something&quot;. This property refers to talks that are the most relevant on a track or by day.</rdfs:comment>
@@ -520,6 +522,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#scheduledDate -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#scheduledDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment xml:lang="en">It refers to the data/time slot of each scheduled Programme Item of the convention.</rdfs:comment>
@@ -539,6 +542,7 @@ Legend:
     <!-- http://www.w3.org/2006/time#duration -->
 
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/time#duration">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">It refers to the total amount of time of each scheduled Programme Item of the convention. It can be expressed in hours or in minutes. See the subclasses and respective commentaries and examples.</rdfs:comment>
@@ -551,6 +555,7 @@ Legend:
 
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/time#hours">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#duration"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">It refers to the total amount of time, expressed in hours, of each scheduled Programme Item of the convention.</rdfs:comment>
@@ -571,6 +576,7 @@ Legend:
 
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/time#minutes">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#duration"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:comment xml:lang="en">It refers to the total amount of time, expressed in minutes, of each scheduled Programme Item of the convention.</rdfs:comment>
         <rdfs:label xml:lang="en">minutes</rdfs:label>
         <skos:example xml:lang="en">The triple below represents the asserted sentence &apos;Film1&apos;s duration in minutes is 120&apos;:  
@@ -931,14 +937,14 @@ Legend:
         <rdfs:comment xml:lang="en">Only a participant can be guest of honour in a ProgrammeItem, and it occur when a participant is related to a ProgrammeItem by the property isGuestOfHonourOf (infered as the inverse of the property hasGuestOfHonour).</rdfs:comment>
         <rdfs:label xml:lang="en">Participant</rdfs:label>
         <skos:definition xml:lang="en">According to the Cambridge Dictionary, it is &apos;a person who takes part in or becomes involved in a particular activity&apos;.</skos:definition>
-        <skos:example xml:lang="en">The triple below represents the sentence &apos;Carl Sagan is guest of honour of the reading 1&apos;:
+        <skos:example xml:lang="en">The triple below represents the asserted sentence &apos;Person1&apos; name is Carl Sagan&apos;:  
 
-(s): &apos;Carl Sagan&apos;      (p): isGuestOfHonourOf      (o): &apos;Reading 1&apos;
+(s): Person1  (p): name     (o): &apos;Carl Sagan&apos;
                                                 
 Legend:
-(s) subject = individual resource of class Participant, inferred as a &apos;Guest of honour&apos;
-(p) predicate = object property, inverse of hasGuestOfHonour
-(o) object = individual resource of class Reading</skos:example>
+(s) subject = asserted individual resource of class Participant
+(p) predicate = data property
+(o) object = string</skos:example>
     </owl:Class>
     
 
@@ -965,17 +971,10 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem">
+        <rdfs:comment xml:lang="en">Each of the programme items should be an instance of one of the subclasses: &apos;Film Screening&apos;, &apos;Panel Session&apos;, Play, Reading, Talk or Workshop. Expand it to see each of them and their definitions and examples.</rdfs:comment>
         <rdfs:label xml:lang="en-us">Program Item</rdfs:label>
         <rdfs:label xml:lang="en">Programme Item</rdfs:label>
         <skos:definition xml:lang="en">Each of the activities that take place in the convention.</skos:definition>
-        <skos:definition xml:lang="en">The triple below represents the inferred sentence &apos;Rachel Green attends to film1&apos;: 
-
-(s): &apos;Rachel Green&apos;     (p): attendsTo      (o): film1
-                                                
-Legend:
-(s) subject = asserted individual resource of class Participant, and inferred individual of subclass Attendee
-(p) predicate = object property
-(o) object = asserted individual resource of class FilmScreening</skos:definition>
     </owl:Class>
     
 

@@ -1,17 +1,20 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#"
      xml:base="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv"
-     xmlns:sfc="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:schema="https://schema.org/attendee"
+     xmlns:rooms="http://vocab.deri.ie/rooms#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:sfc="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:time="http://www.w3.org/2006/time#"
      xmlns:ontology="http://dbpedia.org/ontology/"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/">
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:po="http://purl.org/ontology/po/">
     <owl:Ontology rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv">
         <skos:definition xml:lang="en">Scificonv is an ontology created for describing data of a science fiction convention. It contains the main concepts found in the most popular events from the same category..</skos:definition>
         <rdfs:comment xml:lang="en">Scificonv reuses terms from some well-known ontologies: foaf, dcterms, skos and time.</rdfs:comment>
@@ -117,7 +120,7 @@ Legend:
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/po/participant"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Track"/>
         <rdfs:comment xml:lang="en">This property sets the relationship (enrollment) between a Participant and a Track. Any participant should be enrolled on only one of the tracks, which are disjoint.</rdfs:comment>
         <skos:example xml:lang="en">The triple below represents the inferred sentence &apos;Stephen Brown is enrolled on Science track&apos;: 
@@ -156,7 +159,7 @@ Legend:
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/po/participant"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person/Gender"/>
         <rdfs:comment xml:lang="en">It is a functional property that relates a Participant to his/her Gender, which means that each individual must have only one gender: Female or Male, which are disjoint.</rdfs:comment>
         <skos:example xml:lang="en">The triple below represents the sentence &apos;Maria Silva is a female&apos;:
@@ -339,16 +342,16 @@ Legend:
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Floor"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Room"/>
+                    <rdf:Description rdf:about="http://vocab.deri.ie/rooms#Floor"/>
+                    <rdf:Description rdf:about="http://vocab.deri.ie/rooms#Room"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Floor"/>
+                    <rdf:Description rdf:about="http://vocab.deri.ie/rooms#Building"/>
+                    <rdf:Description rdf:about="http://vocab.deri.ie/rooms#Floor"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
@@ -455,7 +458,7 @@ Legend:
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Room"/>
+        <rdfs:range rdf:resource="http://vocab.deri.ie/rooms#Room"/>
         <rdfs:comment xml:lang="en">This functional property sets the relationship between a Programme Item and a Room. Any item should be associated to only one of the rooms, which are disjoint.</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -595,7 +598,7 @@ Legend:
 
     <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/name">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdfs:domain rdf:resource="http://purl.org/ontology/po/participant"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">As a property imported from the foaf ontology, name refers only to people names.</rdfs:comment>
         <rdfs:label xml:lang="en">name</rdfs:label>
@@ -622,13 +625,88 @@ Legend:
     
 
 
+    <!-- http://purl.org/ontology/po/participant -->
+
+    <owl:Class rdf:about="http://purl.org/ontology/po/participant">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name"/>
+        </owl:hasKey>
+        <rdfs:comment xml:lang="en">Only a participant can be guest of honour in a ProgrammeItem, and it occur when a participant is related to a ProgrammeItem by the property isGuestOfHonourOf (infered as the inverse of the property hasGuestOfHonour).</rdfs:comment>
+        <rdfs:label xml:lang="en">Participant</rdfs:label>
+        <skos:definition xml:lang="en">According to the Cambridge Dictionary, it is &apos;a person who takes part in or becomes involved in a particular activity&apos;.</skos:definition>
+        <skos:example xml:lang="en">The triple below represents the asserted sentence &apos;Person1&apos; name is Carl Sagan&apos;:  
+
+(s): Person1  (p): name     (o): &apos;Carl Sagan&apos;
+                                                
+Legend:
+(s) subject = asserted individual resource of class Participant
+(p) predicate = data property
+(o) object = string</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.deri.ie/rooms#Building -->
+
+    <owl:Class rdf:about="http://vocab.deri.ie/rooms#Building">
+        <ontology:synonym xml:lang="en">Construction</ontology:synonym>
+        <rdfs:label xml:lang="en">Building</rdfs:label>
+        <skos:definition xml:lang="en">According to the Oxford Dictionary, a building is &apos;a structure with a roof and walls, such as a house or factory&apos;. Buildings may have stacked floors also know as levels.</skos:definition>
+        <skos:example xml:lang="en">The triple below represents the sentence &apos;The floor B1Floor1 is located in the Building 1 Andromeda&apos;:
+
+(s): B1Floor1    (p): inBuilding    (o): &apos;Building 1 Andromeda&apos;
+                                             
+Legend:
+(s) subject = asserted individual resource of class Floor
+(p) predicate = object property
+(o) object = asserted individual resource of class Building</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.deri.ie/rooms#Floor -->
+
+    <owl:Class rdf:about="http://vocab.deri.ie/rooms#Floor">
+        <ontology:synonym xml:lang="en">Level</ontology:synonym>
+        <rdfs:label xml:lang="en">Floor</rdfs:label>
+        <skos:definition xml:lang="en">According to the Cambridge Dictionary, it is each level of a building. A Building may have 1 or more instances of Floor.</skos:definition>
+        <skos:example xml:lang="en">The triple below represents the sentence &apos;The room B1Room101 is located on the first floor of Building 1 Andromeda&apos;:
+
+(s): B1Room1   (p): isLocatedIn    (o):  B1Floor1
+                                             
+Legend:
+(s) subject = asserted individual resource of subclass Room
+(p) predicate = object property
+(o) object = asserted individual resource of class Floor</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.deri.ie/rooms#Room -->
+
+    <owl:Class rdf:about="http://vocab.deri.ie/rooms#Room">
+        <rdfs:label xml:lang="en">Room</rdfs:label>
+        <skos:definition xml:lang="en">According to the Cambridge Dictionary, it is &quot;a part of the inside of a building that is separated from other parts by walls, floor, and ceiling&quot;.</skos:definition>
+        <skos:definition xml:lang="en">The triple below represents the inferred sentence &apos;Film 1 takes place in the room 305 of Building 1 (auditorium)&apos;: 
+
+(s): film1    (p): takesPlaceIn     (o): &apos;Room 305 of Building 1&apos;
+                                                
+Legend:
+(s) subject = asserted individual resource of class &apos;Film Screening&apos;
+(p) predicate = object property
+(o) object = asserted individual resource of class Auditorium</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Attendee -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Attendee">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+                    <rdf:Description rdf:about="http://purl.org/ontology/po/participant"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#attendsTo"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
@@ -642,7 +720,7 @@ Legend:
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/po/participant"/>
         <ontology:synonym xml:lang="en">Spectator</ontology:synonym>
         <rdfs:comment xml:lang="en">The attendee is a spectator in the event. Everyone who is not an Instructor, Moderator, Panellist, Speaker or Guest of honour.</rdfs:comment>
         <rdfs:label xml:lang="en">Attendee</rdfs:label>
@@ -663,7 +741,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Auditorium -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Auditorium">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Room"/>
+        <rdfs:subClassOf rdf:resource="http://vocab.deri.ie/rooms#Room"/>
         <rdfs:label xml:lang="en">Auditorium</rdfs:label>
         <skos:definition xml:lang="en">According to the Oxford Dictionary, it is &quot;a large building or hall used for public gatherings, typically speeches or stage performances&quot; (US).</skos:definition>
         <skos:example xml:lang="en">The triple below represents the inferred sentence &apos;Film 1 takes place in the room 305 of Building 1 (auditorium)&apos;: 
@@ -674,24 +752,6 @@ Legend:
 (s) subject = asserted individual resource of class &apos;Film Screening&apos;
 (p) predicate = object property
 (o) object = asserted individual resource of class Auditorium</skos:example>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building">
-        <ontology:synonym xml:lang="en">Construction</ontology:synonym>
-        <rdfs:label xml:lang="en">Building</rdfs:label>
-        <skos:definition xml:lang="en">According to the Oxford Dictionary, a building is &apos;a structure with a roof and walls, such as a house or factory&apos;. Buildings may have stacked floors also know as levels.</skos:definition>
-        <skos:example xml:lang="en">The triple below represents the sentence &apos;The floor B1Floor1 is located in the Building 1 Andromeda&apos;:
-
-(s): B1Floor1    (p): inBuilding    (o): &apos;Building 1 Andromeda&apos;
-                                             
-Legend:
-(s) subject = asserted individual resource of class Floor
-(p) predicate = object property
-(o) object = asserted individual resource of class Building</skos:example>
     </owl:Class>
     
 
@@ -714,31 +774,13 @@ Legend:
     
 
 
-    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Floor -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Floor">
-        <ontology:synonym xml:lang="en">Level</ontology:synonym>
-        <rdfs:label xml:lang="en">Floor</rdfs:label>
-        <skos:definition xml:lang="en">According to the Cambridge Dictionary, it is each level of a building. A Building may have 1 or more instances of Floor.</skos:definition>
-        <skos:example xml:lang="en">The triple below represents the sentence &apos;The room B1Room101 is located on the first floor of Building 1 Andromeda&apos;:
-
-(s): B1Room1   (p): isLocatedIn    (o):  B1Floor1
-                                             
-Legend:
-(s) subject = asserted individual resource of subclass Room
-(p) predicate = object property
-(o) object = asserted individual resource of class Floor</skos:example>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#GuestOfHonour -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#GuestOfHonour">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+                    <rdf:Description rdf:about="http://purl.org/ontology/po/participant"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#isGuestOfHonourOf"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
@@ -747,7 +789,7 @@ Legend:
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/po/participant"/>
         <rdfs:comment xml:lang="en">Only a person can be guest of honour in a ProgrammeItem, and a person is a guest of honour when is related to a ProgrammeItem by the property isGuestOfHonourOf (infered as the inverse of the property hasGuestOfHonour).</rdfs:comment>
         <rdfs:comment xml:lang="en">The only programme items where there are guest of honours are: PanelSession, Reading and Talk.</rdfs:comment>
         <rdfs:label xml:lang="en">Guest of honour</rdfs:label>
@@ -770,7 +812,7 @@ Legend:
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+                    <rdf:Description rdf:about="http://purl.org/ontology/po/participant"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#isInstructorOf"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
@@ -779,7 +821,7 @@ Legend:
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/po/participant"/>
         <ontology:synonym xml:lang="en">mentor</ontology:synonym>
         <ontology:synonym xml:lang="en">teacher</ontology:synonym>
         <ontology:synonym xml:lang="en">tutor</ontology:synonym>
@@ -801,7 +843,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#MeetingRoom -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#MeetingRoom">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Room"/>
+        <rdfs:subClassOf rdf:resource="http://vocab.deri.ie/rooms#Room"/>
         <rdfs:label xml:lang="en">Meeting Room</rdfs:label>
         <skos:definition xml:lang="en">According to the Cambridge Dictionary, it is &quot;a room that is used for meetings&quot;.</skos:definition>
         <skos:example xml:lang="en">The triple below represents the inferred sentence &apos;Reading 1 takes place in the  Room 101 of Building 2 (meeting room)&apos;: 
@@ -822,7 +864,7 @@ Legend:
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+                    <rdf:Description rdf:about="http://purl.org/ontology/po/participant"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#isModeratorOf"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
@@ -831,7 +873,7 @@ Legend:
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/po/participant"/>
         <ontology:synonym xml:lang="en">Mediator</ontology:synonym>
         <rdfs:comment xml:lang="en">The moderator has the responsibility of controlling the time of the panellists&apos; speeches, and also to regard the good development of the panel.</rdfs:comment>
         <rdfs:label xml:lang="en">Moderator</rdfs:label>
@@ -902,7 +944,7 @@ Legend:
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+                    <rdf:Description rdf:about="http://purl.org/ontology/po/participant"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#isPanellistOf"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
@@ -911,7 +953,7 @@ Legend:
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/po/participant"/>
         <rdfs:comment xml:lang="en">The panellist is an expert in any field related to the convention theme.</rdfs:comment>
         <rdfs:label xml:lang="en-us">Panelist</rdfs:label>
         <rdfs:label xml:lang="en-gb">Panellist</rdfs:label>
@@ -924,28 +966,6 @@ Legend:
 (s) subject = asserted individual resource of class Participant, and inferred individual of subclass Panellist
 (p) predicate = object property, inverse of hasPanellist
 (o) object = asserted individual resource of class &apos;Panel Session&apos;</skos:example>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant">
-        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <owl:hasKey rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name"/>
-        </owl:hasKey>
-        <rdfs:comment xml:lang="en">Only a participant can be guest of honour in a ProgrammeItem, and it occur when a participant is related to a ProgrammeItem by the property isGuestOfHonourOf (infered as the inverse of the property hasGuestOfHonour).</rdfs:comment>
-        <rdfs:label xml:lang="en">Participant</rdfs:label>
-        <skos:definition xml:lang="en">According to the Cambridge Dictionary, it is &apos;a person who takes part in or becomes involved in a particular activity&apos;.</skos:definition>
-        <skos:example xml:lang="en">The triple below represents the asserted sentence &apos;Person1&apos; name is Carl Sagan&apos;:  
-
-(s): Person1  (p): name     (o): &apos;Carl Sagan&apos;
-                                                
-Legend:
-(s) subject = asserted individual resource of class Participant
-(p) predicate = data property
-(o) object = string</skos:example>
     </owl:Class>
     
 
@@ -1016,27 +1036,10 @@ Legend:
     
 
 
-    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Room -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Room">
-        <rdfs:label xml:lang="en">Room</rdfs:label>
-        <skos:definition xml:lang="en">According to the Cambridge Dictionary, it is &quot;a part of the inside of a building that is separated from other parts by walls, floor, and ceiling&quot;.</skos:definition>
-        <skos:definition xml:lang="en">The triple below represents the inferred sentence &apos;Film 1 takes place in the room 305 of Building 1 (auditorium)&apos;: 
-
-(s): film1    (p): takesPlaceIn     (o): &apos;Room 305 of Building 1&apos;
-                                                
-Legend:
-(s) subject = asserted individual resource of class &apos;Film Screening&apos;
-(p) predicate = object property
-(o) object = asserted individual resource of class Auditorium</skos:definition>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#SeminarRoom -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#SeminarRoom">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Room"/>
+        <rdfs:subClassOf rdf:resource="http://vocab.deri.ie/rooms#Room"/>
         <rdfs:label xml:lang="en">Seminar Room</rdfs:label>
         <skos:definition xml:lang="en">According to the Oxford Dictionary, a seminar is &quot;a conference or other meeting for discussion or training&quot;. Therefore, a seminar room is a room appropriate for this type of event. It is usually small and has conventional chairs, like classrooms.</skos:definition>
         <skos:example xml:lang="en">The triple below represents the inferred sentence &apos;Workshop 1 takes place in the room 101 of Building 1&apos;: 
@@ -1057,7 +1060,7 @@ Legend:
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+                    <rdf:Description rdf:about="http://purl.org/ontology/po/participant"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#isSpeakerOf"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
@@ -1066,7 +1069,7 @@ Legend:
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/po/participant"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#isSpeakerOf"/>
@@ -1219,6 +1222,51 @@ Legend:
     
 
 
+    <!-- http://vocab.deri.ie/rooms#Building1 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.deri.ie/rooms#Building1">
+        <rdf:type rdf:resource="http://vocab.deri.ie/rooms#Building"/>
+        <rdfs:label>Building 1 Andromeda</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.deri.ie/rooms#Building2 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.deri.ie/rooms#Building2">
+        <rdf:type rdf:resource="http://vocab.deri.ie/rooms#Building"/>
+        <rdfs:label>Building 2 Milk Way</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.deri.ie/rooms#Building3 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.deri.ie/rooms#Building3">
+        <rdf:type rdf:resource="http://vocab.deri.ie/rooms#Building"/>
+        <rdfs:label>Building 3 Sunflower</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.deri.ie/rooms#Building4 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.deri.ie/rooms#Building4">
+        <rdf:type rdf:resource="http://vocab.deri.ie/rooms#Building"/>
+        <rdfs:label>Building 4 Whirlpool</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://vocab.deri.ie/rooms#Building5 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.deri.ie/rooms#Building5">
+        <rdf:type rdf:resource="http://vocab.deri.ie/rooms#Building"/>
+        <rdfs:label>Building 5 Pinwheel</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack">
@@ -1230,8 +1278,8 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Floor1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Floor1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Floor"/>
-        <isLocatedIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building1"/>
+        <rdf:type rdf:resource="http://vocab.deri.ie/rooms#Floor"/>
+        <isLocatedIn rdf:resource="http://vocab.deri.ie/rooms#Building1"/>
         <rdfs:label>1st Floor of Building 1</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1240,8 +1288,8 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Floor2 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Floor2">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Floor"/>
-        <isLocatedIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building1"/>
+        <rdf:type rdf:resource="http://vocab.deri.ie/rooms#Floor"/>
+        <isLocatedIn rdf:resource="http://vocab.deri.ie/rooms#Building1"/>
         <rdfs:label>2nd Floor of Building 1</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1250,8 +1298,8 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Floor3 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Floor3">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Floor"/>
-        <isLocatedIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building1"/>
+        <rdf:type rdf:resource="http://vocab.deri.ie/rooms#Floor"/>
+        <isLocatedIn rdf:resource="http://vocab.deri.ie/rooms#Building1"/>
         <rdfs:label>3rd Floor of Building 1</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1410,8 +1458,8 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B2Floor1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B2Floor1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Floor"/>
-        <isLocatedIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building2"/>
+        <rdf:type rdf:resource="http://vocab.deri.ie/rooms#Floor"/>
+        <isLocatedIn rdf:resource="http://vocab.deri.ie/rooms#Building2"/>
         <rdfs:label>1st Floor of Building 2</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1420,8 +1468,8 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B2Floor2 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B2Floor2">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Floor"/>
-        <isLocatedIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building2"/>
+        <rdf:type rdf:resource="http://vocab.deri.ie/rooms#Floor"/>
+        <isLocatedIn rdf:resource="http://vocab.deri.ie/rooms#Building2"/>
         <rdfs:label>2nd Floor of Building 2</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1430,8 +1478,8 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B2Floor3 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B2Floor3">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Floor"/>
-        <isLocatedIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building2"/>
+        <rdf:type rdf:resource="http://vocab.deri.ie/rooms#Floor"/>
+        <isLocatedIn rdf:resource="http://vocab.deri.ie/rooms#Building2"/>
         <rdfs:label>3rd Floor of Building 2</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1510,8 +1558,8 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B3Floor1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B3Floor1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Floor"/>
-        <isLocatedIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building3"/>
+        <rdf:type rdf:resource="http://vocab.deri.ie/rooms#Floor"/>
+        <isLocatedIn rdf:resource="http://vocab.deri.ie/rooms#Building3"/>
         <rdfs:label>1st Floor of Building 3</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1520,8 +1568,8 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B3Floor2 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B3Floor2">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Floor"/>
-        <isLocatedIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building3"/>
+        <rdf:type rdf:resource="http://vocab.deri.ie/rooms#Floor"/>
+        <isLocatedIn rdf:resource="http://vocab.deri.ie/rooms#Building3"/>
         <rdfs:label>2nd Floor of Building 3</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1570,8 +1618,8 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B4Floor1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B4Floor1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Floor"/>
-        <isLocatedIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building4"/>
+        <rdf:type rdf:resource="http://vocab.deri.ie/rooms#Floor"/>
+        <isLocatedIn rdf:resource="http://vocab.deri.ie/rooms#Building4"/>
         <rdfs:label>1st Floor of Building 4</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1580,8 +1628,8 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B4Floor2 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B4Floor2">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Floor"/>
-        <isLocatedIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building4"/>
+        <rdf:type rdf:resource="http://vocab.deri.ie/rooms#Floor"/>
+        <isLocatedIn rdf:resource="http://vocab.deri.ie/rooms#Building4"/>
         <rdfs:label>2nd Floor of Building 4</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1610,8 +1658,8 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B5Floor1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B5Floor1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Floor"/>
-        <isLocatedIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building5"/>
+        <rdf:type rdf:resource="http://vocab.deri.ie/rooms#Floor"/>
+        <isLocatedIn rdf:resource="http://vocab.deri.ie/rooms#Building5"/>
         <rdfs:label>1st Floor of Building 5</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1673,51 +1721,6 @@ Legend:
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Auditorium"/>
         <isLocatedIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B5Floor1"/>
         <rdfs:label>Room 106 of Building 5</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building1 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building"/>
-        <rdfs:label>Building 1 Andromeda</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building2 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building2">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building"/>
-        <rdfs:label>Building 2 Milk Way</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building3 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building3">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building"/>
-        <rdfs:label>Building 3 Sunflower</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building4 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building4">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building"/>
-        <rdfs:label>Building 4 Whirlpool</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building5 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building5">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building"/>
-        <rdfs:label>Building 5 Pinwheel</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1970,7 +1973,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David Clements</foaf:name>
         <rdfs:label>David Clements</rdfs:label>
@@ -1981,7 +1984,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person10 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person10">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Karen Cars</foaf:name>
@@ -1993,7 +1996,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person11 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person11">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <attendsTo rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#film1"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ScienceTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
@@ -2004,7 +2007,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person12 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person12">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
     </owl:NamedIndividual>
@@ -2014,7 +2017,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person13 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person13">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ScienceTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
     </owl:NamedIndividual>
@@ -2024,7 +2027,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person14 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person14">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
     </owl:NamedIndividual>
@@ -2034,7 +2037,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person15 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person15">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#PoliticsTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
     </owl:NamedIndividual>
@@ -2044,7 +2047,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person16 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person16">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
     </owl:NamedIndividual>
@@ -2054,7 +2057,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person17 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person17">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ScienceTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
     </owl:NamedIndividual>
@@ -2064,7 +2067,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person18 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person18">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#PoliticsTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
     </owl:NamedIndividual>
@@ -2074,7 +2077,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person19 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person19">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#PoliticsTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
     </owl:NamedIndividual>
@@ -2084,7 +2087,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person2 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person2">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name>Charles Stross</foaf:name>
         <rdfs:label>Charles Stross</rdfs:label>
@@ -2095,7 +2098,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person20 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person20">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
     </owl:NamedIndividual>
@@ -2105,7 +2108,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person21 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person21">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ScienceTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
     </owl:NamedIndividual>
@@ -2115,7 +2118,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person22 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person22">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#PoliticsTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
     </owl:NamedIndividual>
@@ -2125,7 +2128,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person23 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person23">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
     </owl:NamedIndividual>
@@ -2135,7 +2138,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person24 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person24">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
     </owl:NamedIndividual>
@@ -2145,7 +2148,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person25 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person25">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
     </owl:NamedIndividual>
@@ -2155,7 +2158,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person3 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person3">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name>Steve Arnald</foaf:name>
         <rdfs:label>Steve Arnald</rdfs:label>
@@ -2166,7 +2169,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person4 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person4">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name>Ross Geller</foaf:name>
         <rdfs:label>Ross Geller</rdfs:label>
@@ -2177,7 +2180,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person5 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person5">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
         <foaf:name>Sarah Foster</foaf:name>
         <rdfs:label>Sarah Foster</rdfs:label>
@@ -2188,7 +2191,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person6 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person6">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maria Silva</foaf:name>
         <rdfs:label>Maria Silva</rdfs:label>
@@ -2199,7 +2202,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person7 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person7">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <foaf:name>Susan Muller</foaf:name>
         <rdfs:label>Susan Muller</rdfs:label>
     </owl:NamedIndividual>
@@ -2209,7 +2212,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person8 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person8">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name>Carl Sagan</foaf:name>
         <rdfs:label>Carl Sagan</rdfs:label>
@@ -2220,7 +2223,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person9 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person9">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name>Neil deGrasse Tyson</foaf:name>
         <rdfs:label>Neil deGrasse Tyson</rdfs:label>
@@ -2381,17 +2384,17 @@ Legend:
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Auditorium"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#MeetingRoom"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#SeminarRoom"/>
+            <rdf:Description rdf:about="http://vocab.deri.ie/rooms#Building"/>
+            <rdf:Description rdf:about="http://vocab.deri.ie/rooms#Floor"/>
+            <rdf:Description rdf:about="http://vocab.deri.ie/rooms#Room"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Building"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Floor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Room"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Auditorium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#MeetingRoom"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#SeminarRoom"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>

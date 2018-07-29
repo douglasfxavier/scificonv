@@ -120,7 +120,7 @@ Legend:
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Track"/>
         <rdfs:comment xml:lang="en">This property sets the relationship (enrollment) between a Participant and a Track. Any participant should be enrolled on only one of the tracks, which are disjoint.</rdfs:comment>
         <skos:example xml:lang="en">The triple below represents the inferred sentence &apos;Stephen Brown is enrolled on Science track&apos;: 
@@ -159,7 +159,7 @@ Legend:
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person/Gender"/>
         <rdfs:comment xml:lang="en">It is a functional property that relates a Participant to his/her Gender, which means that each individual must have only one gender: Female or Male, which are disjoint.</rdfs:comment>
         <skos:example xml:lang="en">The triple below represents the sentence &apos;Maria Silva is a female&apos;:
@@ -598,7 +598,7 @@ Legend:
 
     <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/name">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">As a property imported from the foaf ontology, name refers only to people names.</rdfs:comment>
         <rdfs:label xml:lang="en">name</rdfs:label>
@@ -622,28 +622,6 @@ Legend:
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://purl.org/ontology/po/participant -->
-
-    <owl:Class rdf:about="http://purl.org/ontology/po/participant">
-        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <owl:hasKey rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name"/>
-        </owl:hasKey>
-        <rdfs:comment xml:lang="en">Only a participant can be guest of honour in a ProgrammeItem, and it occur when a participant is related to a ProgrammeItem by the property isGuestOfHonourOf (infered as the inverse of the property hasGuestOfHonour).</rdfs:comment>
-        <rdfs:label xml:lang="en">Participant</rdfs:label>
-        <skos:definition xml:lang="en">According to the Cambridge Dictionary, it is &apos;a person who takes part in or becomes involved in a particular activity&apos;.</skos:definition>
-        <skos:example xml:lang="en">The triple below represents the asserted sentence &apos;Person1&apos; name is Carl Sagan&apos;:  
-
-(s): Person1  (p): name     (o): &apos;Carl Sagan&apos;
-                                                
-Legend:
-(s) subject = asserted individual resource of class Participant
-(p) predicate = data property
-(o) object = string</skos:example>
-    </owl:Class>
     
 
 
@@ -706,7 +684,7 @@ Legend:
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/ontology/po/participant"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#attendsTo"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
@@ -720,7 +698,7 @@ Legend:
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <ontology:synonym xml:lang="en">Spectator</ontology:synonym>
         <rdfs:comment xml:lang="en">The attendee is a spectator in the event. Everyone who is not an Instructor, Moderator, Panellist, Speaker or Guest of honour.</rdfs:comment>
         <rdfs:label xml:lang="en">Attendee</rdfs:label>
@@ -780,7 +758,7 @@ Legend:
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/ontology/po/participant"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#isGuestOfHonourOf"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
@@ -789,7 +767,7 @@ Legend:
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <rdfs:comment xml:lang="en">Only a person can be guest of honour in a ProgrammeItem, and a person is a guest of honour when is related to a ProgrammeItem by the property isGuestOfHonourOf (infered as the inverse of the property hasGuestOfHonour).</rdfs:comment>
         <rdfs:comment xml:lang="en">The only programme items where there are guest of honours are: PanelSession, Reading and Talk.</rdfs:comment>
         <rdfs:label xml:lang="en">Guest of honour</rdfs:label>
@@ -812,7 +790,7 @@ Legend:
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/ontology/po/participant"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#isInstructorOf"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
@@ -821,7 +799,7 @@ Legend:
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <ontology:synonym xml:lang="en">mentor</ontology:synonym>
         <ontology:synonym xml:lang="en">teacher</ontology:synonym>
         <ontology:synonym xml:lang="en">tutor</ontology:synonym>
@@ -864,7 +842,7 @@ Legend:
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/ontology/po/participant"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#isModeratorOf"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
@@ -873,7 +851,7 @@ Legend:
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <ontology:synonym xml:lang="en">Mediator</ontology:synonym>
         <rdfs:comment xml:lang="en">The moderator has the responsibility of controlling the time of the panellists&apos; speeches, and also to regard the good development of the panel.</rdfs:comment>
         <rdfs:label xml:lang="en">Moderator</rdfs:label>
@@ -944,7 +922,7 @@ Legend:
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/ontology/po/participant"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#isPanellistOf"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
@@ -953,7 +931,7 @@ Legend:
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <rdfs:comment xml:lang="en">The panellist is an expert in any field related to the convention theme.</rdfs:comment>
         <rdfs:label xml:lang="en-us">Panelist</rdfs:label>
         <rdfs:label xml:lang="en-gb">Panellist</rdfs:label>
@@ -966,6 +944,28 @@ Legend:
 (s) subject = asserted individual resource of class Participant, and inferred individual of subclass Panellist
 (p) predicate = object property, inverse of hasPanellist
 (o) object = asserted individual resource of class &apos;Panel Session&apos;</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name"/>
+        </owl:hasKey>
+        <rdfs:comment xml:lang="en">Only a participant can be guest of honour in a ProgrammeItem, and it occur when a participant is related to a ProgrammeItem by the property isGuestOfHonourOf (infered as the inverse of the property hasGuestOfHonour).</rdfs:comment>
+        <rdfs:label xml:lang="en">Participant</rdfs:label>
+        <skos:definition xml:lang="en">According to the Cambridge Dictionary, it is &apos;a person who takes part in or becomes involved in a particular activity&apos;.</skos:definition>
+        <skos:example xml:lang="en">The triple below represents the asserted sentence &apos;Person1&apos; name is Carl Sagan&apos;:  
+
+(s): Person1  (p): name     (o): &apos;Carl Sagan&apos;
+                                                
+Legend:
+(s) subject = asserted individual resource of class Participant
+(p) predicate = data property
+(o) object = string</skos:example>
     </owl:Class>
     
 
@@ -1060,7 +1060,7 @@ Legend:
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/ontology/po/participant"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#isSpeakerOf"/>
                         <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
@@ -1069,7 +1069,7 @@ Legend:
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#isSpeakerOf"/>
@@ -1958,7 +1958,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person1">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David Clements</foaf:name>
         <rdfs:label>David Clements</rdfs:label>
@@ -1969,7 +1969,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person10 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person10">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Karen Cars</foaf:name>
@@ -1981,7 +1981,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person11 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person11">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <attendsTo rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#film1"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ScienceTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
@@ -1994,7 +1994,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person12 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person12">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rachel Green</foaf:name>
@@ -2006,7 +2006,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person13 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person13">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ScienceTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phoebe Buffay</foaf:name>
@@ -2018,7 +2018,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person14 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person14">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chandler Bing</foaf:name>
@@ -2030,7 +2030,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person15 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person15">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#PoliticsTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Joey Tribbiani</foaf:name>
@@ -2042,7 +2042,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person16 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person16">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ted Mosby</foaf:name>
@@ -2054,7 +2054,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person17 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person17">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ScienceTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Robin Scherbatsky</foaf:name>
@@ -2066,7 +2066,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person18 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person18">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#PoliticsTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Barney Stinson</foaf:name>
@@ -2078,7 +2078,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person19 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person19">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#PoliticsTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lily Aldrin</foaf:name>
@@ -2090,7 +2090,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person2 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person2">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name>Charles Stross</foaf:name>
         <rdfs:label>Charles Stross</rdfs:label>
@@ -2101,7 +2101,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person20 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person20">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marshall Eriksen</foaf:name>
@@ -2113,7 +2113,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person21 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person21">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ScienceTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phil Dunphy</foaf:name>
@@ -2125,7 +2125,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person22 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person22">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#PoliticsTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mitchell Pritchett</foaf:name>
@@ -2137,7 +2137,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person23 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person23">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cameron Tucker</foaf:name>
@@ -2149,7 +2149,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person24 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person24">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gloria Pritchett</foaf:name>
@@ -2161,11 +2161,9 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person25 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person25">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
-        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manny Delgado</foaf:name>
-        <rdfs:label>Manny Delgado</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2173,7 +2171,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person3 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person3">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name>Steve Arnald</foaf:name>
         <rdfs:label>Steve Arnald</rdfs:label>
@@ -2184,7 +2182,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person4 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person4">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name>Ross Geller</foaf:name>
         <rdfs:label>Ross Geller</rdfs:label>
@@ -2195,7 +2193,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person5 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person5">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
         <foaf:name>Sarah Foster</foaf:name>
         <rdfs:label>Sarah Foster</rdfs:label>
@@ -2206,7 +2204,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person6 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person6">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maria Silva</foaf:name>
         <rdfs:label>Maria Silva</rdfs:label>
@@ -2217,7 +2215,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person7 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person7">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <foaf:name>Susan Muller</foaf:name>
         <rdfs:label>Susan Muller</rdfs:label>
     </owl:NamedIndividual>
@@ -2227,7 +2225,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person8 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person8">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name>Carl Sagan</foaf:name>
         <rdfs:label>Carl Sagan</rdfs:label>
@@ -2238,7 +2236,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person9 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person9">
-        <rdf:type rdf:resource="http://purl.org/ontology/po/participant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name>Neil deGrasse Tyson</foaf:name>
         <rdfs:label>Neil deGrasse Tyson</rdfs:label>

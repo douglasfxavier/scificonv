@@ -2,31 +2,28 @@
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX sfc: <http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#>
+PREFIX rooms: <http://vocab.deri.ie/rooms#>
+
 SELECT  DISTINCT ?title ?room ?type_room ?building
 	WHERE { 
 	  	?film rdf:type sfc:FilmScreening; 
   	               		dcterms:title ?title;
-	               		sfc:date  ?date;
+	               		sfc:scheduledDate  ?date;
 			sfc:takesPlaceIn ?room .
 		?room rdf:type ?type_room;
 			sfc:isLocatedIn ?floor .
-		?type_room rdfs:subClassOf sfc:Room .
+		?type_room rdfs:subClassOf rooms:Room .
 		?floor sfc:isLocatedIn ?building  .
-FILTER (?date >= "2014-08-15T00:00:00"^^xsd:dateTime &&  ?date <  "2014-08-16T00:00:00"^^xsd:dateTime)
+		FILTER (?date >= "2014-08-15T00:00:00"^^xsd:dateTime &&  ?date <  "2014-08-16T00:00:00"^^xsd:dateTime)
 	}
-
 
 
 2) Which programme items feature both Charles Stross and David Clements?
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX sfc: <http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#>
@@ -35,14 +32,13 @@ SELECT  DISTINCT ?title ?programme_type
 		?programme_type rdfs:subClassOf sfc:ProgrammeItem .
 		?item rdf:type ?programme_type ;
 			dcterms:title ?title;
-			?property ?person .
-		?person rdf:type foaf:Person;
-			foaf:name ?name .
+			?property ?participant .
+		?participant foaf:name ?name .
 		FILTER (
-			regex(?name, "Charles Stross") || regex(?name,"David Clements" )  
-			 
+			regex(?name, "Charles Stross") || regex(?name,"David Clements" ) 
 		)
 	}
+
 
 
 
@@ -50,9 +46,6 @@ SELECT  DISTINCT ?title ?programme_type
 3) Who are the moderators of the science track panel sessions?
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX sfc: <http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#>
 SELECT  DISTINCT ?panel_session ?moderator
@@ -67,17 +60,16 @@ SELECT  DISTINCT ?panel_session ?moderator
 
 4) How many people are participating in the academic track?
 
+
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX sfc: <http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#>
-SELECT (count(*) as ?total_persons)
+SELECT (count(?particpant ) as ?total_persons)
 	WHERE { 
-		?person rdf:type foaf:Person;
-			sfc:participatesIn ?track .
+		?particpant rdf:type sfc:Participant;
+		sfc:enrolledOnTrack ?track .
 		FILTER (?track = sfc:AcademicTrack)	
 	}
 
@@ -87,15 +79,26 @@ SELECT (count(*) as ?total_persons)
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX sfc: <http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#>
-SELECT  (min(?date) as ?scheduled_date)
-	WHERE {
-		?programme_type rdfs:subClassOf sfc:ProgrammeItem .
-		?programme_item rdf:type ?programme_type;
-			sfc:date ?date;
-			dcterms:title ?title;
-			sfc:onTrack ?track 
-		FILTER(?track = sfc:PoliticsTrack) 
+
+SELECT ?title ?programme_type ?scheduled_date
+WHERE {
+	?programme_type rdfs:subClassOf sfc:ProgrammeItem .
+				?programme_item rdf:type ?programme_type ;
+					sfc:scheduledDate ?scheduled_date;
+					dcterms:title ?title .
+	{
+		SELECT (min(?date) as ?scheduled_date)
+			WHERE {
+				?programme_item sfc:scheduledDate ?date;
+					sfc:onTrack ?track 
+				FILTER(?track = sfc:PoliticsTrack)
+			} 
+	} .
+}
+
+	
+
+
+

@@ -931,6 +931,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:hasKey rdf:parseType="Collection">
             <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name"/>
         </owl:hasKey>
@@ -1173,6 +1174,17 @@ Legend:
 (s) subject = asserted individual resource of class Workshop
 (p) predicate = object property
 (o) object = asserted individual resource of class Participant, and inferred individual of subclass Instructor</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:comment xml:lang="en">By definition on Foaf ontology, &quot;the Person class represents people. Something is a Person if it is a person. We don&apos;t nitpic about whether they&apos;re alive, dead, real, or imaginary. The Person class is a sub-class of the Agent class, since all people are considered &apos;agents&apos; in FOAF&quot;.</rdfs:comment>
+        <rdfs:comment xml:lang="en">For this ontology, a person has the general role of a participant. Then, Person and Participant are equivalent classes. See the class Participant and its subclasses.</rdfs:comment>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+        <skos:definition xml:lang="en">According to the Oxford Dictionary, &quot;a human being regarded as an individual&quot;, or &quot;a man, woman, or child&quot; for the Cambridge Dictionary.</skos:definition>
     </owl:Class>
     
 

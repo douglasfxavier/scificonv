@@ -1749,21 +1749,6 @@ Legend:
     
 
 
-    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Reading2 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Reading2">
-        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Reading"/>
-        <hasGuestOfHonour rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person1"/>
-        <hasGuestOfHonour rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person6"/>
-        <onTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
-        <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Room102"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reading of the book &apos;Fire Bringer&apos;, by David Clements</dcterms:title>
-        <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-15T16:00:00</scheduledDate>
-        <rdfs:label>Reading 2</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ScienceTrack -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ScienceTrack">
@@ -2264,7 +2249,20 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B3Room102"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reading of the book &apos;Dark State&apos;, by Charles Stross</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-12T09:00:00</scheduledDate>
-        <rdfs:label>Reading 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#reading2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#reading2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Reading"/>
+        <hasGuestOfHonour rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person1"/>
+        <hasGuestOfHonour rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person6"/>
+        <onTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
+        <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Room102"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reading of the book &apos;Fire Bringer&apos;, by David Clements</dcterms:title>
+        <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-15T16:00:00</scheduledDate>
     </owl:NamedIndividual>
     
 

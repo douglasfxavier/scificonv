@@ -944,6 +944,23 @@ Legend:
     
 
 
+    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Moderator_Panellist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Moderator_Panellist">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Moderator"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Panellist"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#MultiTrackScreening -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#MultiTrackScreening">
@@ -2198,7 +2215,7 @@ Legend:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person2">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
-        <foaf:name>Charles Stross</foaf:name>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Charles Stross</foaf:name>
         <rdfs:label>Charles Stross</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2264,7 +2281,7 @@ Legend:
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person25">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
-        <foaf:name>John Hebeler</foaf:name>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">John Hebeler</foaf:name>
         <rdfs:label>John Hebeler</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2274,7 +2291,7 @@ Legend:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person3">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
-        <foaf:name>Steve Arnald</foaf:name>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Steve Arnald</foaf:name>
         <rdfs:label>Steve Arnald</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2284,7 +2301,7 @@ Legend:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person4">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
-        <foaf:name>Ross Geller</foaf:name>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ross Geller</foaf:name>
         <rdfs:label>Ross Geller</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2294,7 +2311,7 @@ Legend:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person5">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
-        <foaf:name>Sarah Foster</foaf:name>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sarah Foster</foaf:name>
         <rdfs:label>Sarah Foster</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2314,7 +2331,7 @@ Legend:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person7">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
-        <foaf:name>Susan Muller</foaf:name>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Susan Muller</foaf:name>
         <rdfs:label>Susan Muller</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2324,7 +2341,7 @@ Legend:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person8">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
-        <foaf:name>Carl Sagan</foaf:name>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carl Sagan</foaf:name>
         <rdfs:label>Carl Sagan</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2334,7 +2351,7 @@ Legend:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person9">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
-        <foaf:name>Neil deGrasse Tyson</foaf:name>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neil deGrasse Tyson</foaf:name>
         <rdfs:label>Neil deGrasse Tyson</rdfs:label>
     </owl:NamedIndividual>
     

@@ -20,6 +20,7 @@
         <rdfs:comment xml:lang="en">Scificonv reuses terms from some well-known ontologies: foaf, dcterms, skos and time.</rdfs:comment>
         <dcterms:licence xml:lang="en">https://creativecommons.org/licenses/by/4.0/</dcterms:licence>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v.1[beta]</owl:versionInfo>
+        <rdfs:seeAlso>https://github.com/douglasfxavier/scificonv</rdfs:seeAlso>
         <dcterms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Douglas Xavier</dcterms:creator>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scificonv Ontology v.1</rdfs:label>
         <rdfs:comment xml:lang="en">Ontology consistency tested with the reasoners FaCT and Pellet</rdfs:comment>

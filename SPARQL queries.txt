@@ -6,18 +6,20 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX sfc: <http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#>
 PREFIX rooms: <http://vocab.deri.ie/rooms#>
 
-SELECT  DISTINCT ?title ?room ?type_room ?building
+SELECT  DISTINCT ?title ?dateTime ?room ?type_room ?building
 	WHERE { 
 	  	?film rdf:type sfc:FilmScreening; 
   	               		dcterms:title ?title;
-	               		sfc:scheduledDate  ?date;
+	               		sfc:scheduledDate  ?dateTime;
 			sfc:takesPlaceIn ?room .
 		?room rdf:type ?type_room;
 			sfc:isLocatedIn ?floor .
 		?type_room rdfs:subClassOf rooms:Room .
 		?floor sfc:isLocatedIn ?building  .
-		FILTER (?date >= "2014-08-15T00:00:00"^^xsd:dateTime &&  ?date <  "2014-08-16T00:00:00"^^xsd:dateTime)
+		FILTER (?dateTime >= "2014-08-15T00:00:00"^^xsd:dateTime &&  ?dateTime <  "2014-08-16T00:00:00"^^xsd:dateTime)
 	}
+
+
 
 
 2) Which programme items feature both Charles Stross and David Clements?
@@ -58,6 +60,7 @@ SELECT  DISTINCT ?panel_session ?moderator
 
 
 
+
 4) How many people are participating in the academic track?
 
 
@@ -66,12 +69,13 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX sfc: <http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#>
-SELECT (count(?particpant ) as ?total_persons)
+SELECT (count(?participant ) as ?total_persons)
 	WHERE { 
-		?particpant rdf:type sfc:Participant;
+		?participant rdf:type sfc:Participant;
 		sfc:enrolledOnTrack ?track .
 		FILTER (?track = sfc:AcademicTrack)	
 	}
+
 
 
 

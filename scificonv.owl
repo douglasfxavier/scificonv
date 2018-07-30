@@ -1219,7 +1219,7 @@ Legend:
                         <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
                         <owl:withRestrictions rdf:parseType="Collection">
                             <rdf:Description>
-                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">90</xsd:maxExclusive>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">90</xsd:maxInclusive>
                             </rdf:Description>
                         </owl:withRestrictions>
                     </rdfs:Datatype>
@@ -1944,6 +1944,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Room305"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Interestellar</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-15T16:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -1957,6 +1958,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B2Room301"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gravity</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-16T15:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">150</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -1982,6 +1984,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B5Room106"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2001: a space odyssey</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-16T14:30:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">250</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -1994,6 +1997,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B5Room105"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star Trek</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-14T17:15:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">180</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2006,6 +2010,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B4Room101"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The theory of everything</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-15T15:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">140</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2016,8 +2021,9 @@ Legend:
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#FilmScreening"/>
         <onTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B4Room101"/>
-        <dcterms:title>Back to the future I</dcterms:title>
+        <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Back to the future I</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-15T20:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">95</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2030,6 +2036,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B5Room105"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mars</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-16T19:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">125</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2042,6 +2049,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B5Room106"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Black Panther</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-15T16:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">170</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2054,6 +2062,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B4Room201"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Avengers</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-16T17:30:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">150</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2070,6 +2079,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B4Room201"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Representations of science in the fiction literature</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-13T16:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2085,6 +2095,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B2Room301"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ultimate discoveries about the universe</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-12T14:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2101,6 +2112,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B2Room301"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">How universitiess have contributed to the research on science fiction</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-13T13:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2116,6 +2128,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B2Room301"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What are the implications of the new legislation on science budget?</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-13T17:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2131,6 +2144,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Room305"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Interections between science and education</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-12T18:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2447,6 +2461,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Room101"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Astrophysics vs Biologists</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-15T13:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">120</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2459,6 +2474,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Room102"/>
         <dcterms:title>Teatchers vs. Stundents</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-12T15:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">80</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2472,6 +2488,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B3Room102"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reading of the book &apos;Dark State&apos;, by Charles Stross</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-12T09:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">90</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2485,6 +2502,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Room102"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reading of the book &apos;Fire Bringer&apos;, by David Clements</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-15T16:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2497,6 +2515,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B5Room101"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fanfic reading</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-17T14:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2511,6 +2530,7 @@ Legend:
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Science fiction for a new generation of students</dcterms:title>
         <isKeynote rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isKeynote>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-14T10:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2525,6 +2545,7 @@ Legend:
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The power of the science in our lives</dcterms:title>
         <isKeynote rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isKeynote>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-13T16:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2538,6 +2559,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B5Room106"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inspiration is the key for the Science, and you can find it on books</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-16T16:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2552,6 +2574,7 @@ Legend:
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The signs of a new era for politics come from the modern science</dcterms:title>
         <isKeynote rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isKeynote>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-16T20:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2566,6 +2589,7 @@ Legend:
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Astrophysics is awesome, find out</dcterms:title>
         <isKeynote rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isKeynote>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-18T16:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">120</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2579,6 +2603,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Room101"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">How to set up a telescope</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-15T16:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">180</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2592,6 +2617,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B5Room101"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Observation of the Cosmos: a guideline</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-16T16:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">180</time:minutes>
     </owl:NamedIndividual>
     
 
@@ -2605,6 +2631,7 @@ Legend:
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Room102"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Methodologies for science studies</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-15T17:00:00</scheduledDate>
+        <time:minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</time:minutes>
     </owl:NamedIndividual>
     
 

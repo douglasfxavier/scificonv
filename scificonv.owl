@@ -834,6 +834,27 @@ Legend:
     
 
 
+    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#GuestReading -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#GuestReading">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Reading"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasGuestOfHonour"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#GuestOfHonour"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Reading"/>
+        <rdfs:label>Guest Reading</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Instructor -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Instructor">
@@ -872,27 +893,22 @@ Legend:
 
     <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#LongDurationItem">
         <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.w3.org/2006/time#minutes"/>
-                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                        <owl:onDataRange>
-                            <rdfs:Datatype>
-                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-                                <owl:withRestrictions rdf:parseType="Collection">
-                                    <rdf:Description>
-                                        <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">90</xsd:minExclusive>
-                                    </rdf:Description>
-                                </owl:withRestrictions>
-                            </rdfs:Datatype>
-                        </owl:onDataRange>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#minutes"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">90</xsd:minExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItemByDuration"/>
     </owl:Class>
     
 
@@ -1140,6 +1156,7 @@ Legend:
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItemByDuration"/>
         <rdfs:comment xml:lang="en">Each of the programme items should be an instance of one of the subclasses: &apos;Film Screening&apos;, &apos;Panel Session&apos;, Play, Reading, Talk or Workshop. Expand it to see each of them and their definitions and examples.</rdfs:comment>
         <rdfs:label xml:lang="en-us">Program Item</rdfs:label>
         <rdfs:label xml:lang="en">Programme Item</rdfs:label>
@@ -1148,28 +1165,16 @@ Legend:
     
 
 
+    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItemByDuration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItemByDuration"/>
+    
+
+
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Reading -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Reading">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasGuestOfHonour"/>
-                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                        <owl:onClass rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#GuestOfHonour"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasGuestOfHonour"/>
-                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#GuestOfHonour"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Reading</rdfs:label>
         <skos:definition xml:lang="en">Slot in the convention programme for the participants to read science fiction books and comics.</skos:definition>
         <skos:example xml:lang="en">The triple below represents the inferred sentence &apos;Reading 1 has as the guest of honour Carl Sagan&apos;:
@@ -1202,23 +1207,26 @@ Legend:
     
 
 
-    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#SmallReading -->
+    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ShortDurationItem -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#SmallReading">
+    <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ShortDurationItem">
         <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Reading"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#hasGuestOfHonour"/>
-                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                        <owl:onClass rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#GuestOfHonour"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#minutes"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">90</xsd:maxExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Reading"/>
-        <rdfs:label>Small Reading</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItemByDuration"/>
     </owl:Class>
     
 
@@ -2461,11 +2469,22 @@ Legend:
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#reading2">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Reading"/>
         <hasGuestOfHonour rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person1"/>
-        <hasGuestOfHonour rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person6"/>
         <onTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B1Room102"/>
         <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reading of the book &apos;Fire Bringer&apos;, by David Clements</dcterms:title>
         <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-15T16:00:00</scheduledDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#reading3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#reading3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Reading"/>
+        <onTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ScienceTrack"/>
+        <takesPlaceIn rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#B5Room101"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fanfic reading</dcterms:title>
+        <scheduledDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-17T14:00:00</scheduledDate>
     </owl:NamedIndividual>
     
 

@@ -701,7 +701,7 @@ Legend:
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <ontology:synonym xml:lang="en">Spectator</ontology:synonym>
-        <rdfs:comment xml:lang="en">The attendee is a spectator in the event. Everyone who is not an Instructor, Moderator, Panellist, Speaker or Guest of honour.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The attendee is a spectator in the event. Everyone who is not an Instructor, Moderator, Panellist, Speaker or &apos;Guest of honour&apos;.</rdfs:comment>
         <rdfs:label xml:lang="en">Attendee</rdfs:label>
         <skos:definition xml:lang="en">According to the Cambridge Dictionary, &apos;someone who goes to a place, event, etc.&apos;.</skos:definition>
         <skos:definition xml:lang="en">According to the Oxford Dictionary, it is &apos;a person who attends a conference or other gathering&apos;.</skos:definition>
@@ -761,6 +761,7 @@ Legend:
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#PanelSession"/>
         <rdfs:label>Egalitarian Panel Session</rdfs:label>
+        <skos:definition xml:lang="en">It defines a panel session which has both female and male panellists.</skos:definition>
     </owl:Class>
     
 
@@ -780,6 +781,9 @@ Legend:
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">This classification helps in identifying how diverse is a programme item, for example, a panel session which has several panellists. They can be both female and male, then the given panel session should be classified as &apos;Egalitarian Panel Session&apos;.</rdfs:comment>
+        <rdfs:label>Female Person</rdfs:label>
+        <skos:definition xml:lang="en">It defines a Person whose gender is Female.</skos:definition>
     </owl:Class>
     
 
@@ -788,6 +792,7 @@ Legend:
 
     <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#FilmScreening">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
+        <rdfs:comment xml:lang="en">If a film runs in two or more tracks, then it is inferred as a &apos;MultiTrack Screening&apos;.</rdfs:comment>
         <rdfs:label xml:lang="en">Film Screening</rdfs:label>
         <skos:definition xml:lang="en">An entertainment activity within the convention, where the participants can watch sci-fi films in the free time.</skos:definition>
         <skos:example xml:lang="en">The triple below represents the inferred sentence &apos;Rachel Green attends to film1&apos;: 
@@ -819,7 +824,7 @@ Legend:
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
         <rdfs:comment xml:lang="en">Only a person can be guest of honour in a ProgrammeItem, and a person is a guest of honour when is related to a ProgrammeItem by the property isGuestOfHonourOf (infered as the inverse of the property hasGuestOfHonour).</rdfs:comment>
-        <rdfs:comment xml:lang="en">The only programme items where there are guest of honours are: PanelSession, Reading and Talk.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The only programme items where there are guest of honours are: &apos;Panel Session&apos;, Reading and Talk.</rdfs:comment>
         <rdfs:label xml:lang="en">Guest of honour</rdfs:label>
         <skos:definition xml:lang="en">According to the Oxford Dictionary, it is &apos;the most important guest at an occasion&apos;.</skos:definition>
         <skos:example xml:lang="en">The triple below represents the inferred sentence &apos;Carl Sagan is the guest of honour of reading 1&apos;:
@@ -851,6 +856,15 @@ Legend:
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Reading"/>
         <rdfs:label>Guest Reading</rdfs:label>
+        <skos:definition xml:lang="en">It defines a reading thas has at least a &apos;Guest of honour&apos;.</skos:definition>
+        <skos:example xml:lang="en">The triple below represents the inferred sentence &apos;Reading 1 has as the guest of honour Carl Sagan&apos;:
+
+(s): reading1     (p): hasGuestOfHonour     (o): &apos;Carl Sagan&apos; 
+                                                
+Legend:
+(s) subject = asserted individual resource of class Reading
+(p) predicate = object property
+(o) object = asserted individual resource of class Person, and inferred individual of subclass &apos;Guest of honour&apos;</skos:example>
     </owl:Class>
     
 
@@ -909,6 +923,8 @@ Legend:
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItemByDuration"/>
+        <rdfs:label xml:lang="en">Long Duration Item</rdfs:label>
+        <skos:example xml:lang="en">It defines, by inference, a &apos;Programme Item&apos; that has duration equals or less than 90 minutes.</skos:example>
     </owl:Class>
     
 
@@ -928,6 +944,9 @@ Legend:
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">This classification helps in identifying how diverse is a programme item, for example, a panel session which has several panellists. They can be both female and male, then the given panel session should be classified as &apos;Egalitarian Panel Session&apos;.</rdfs:comment>
+        <rdfs:label>Male Person</rdfs:label>
+        <skos:definition xml:lang="en">It defines a Person whose gender is Male.</skos:definition>
     </owl:Class>
     
 
@@ -1008,6 +1027,23 @@ Legend:
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <rdfs:label xml:lang="en">Moderator and Panellist</rdfs:label>
+        <skos:definition xml:lang="en">It defines, by inference, a participant who is both Moderator and Panellist.</skos:definition>
+        <skos:example xml:lang="en">The triples below represent the inferred sentence &apos;Steve Arnald is moderator of the panel session 1 and panellist of  panell session 4&apos;: 
+
+(s): &apos;Steve Arnald&apos;     (p): isModeratorOf      (o): panelsession1
+                                                
+Legend:
+(s) subject = asserted individual resource of class Participant, and inferred individual of subclass Moderator
+(p) predicate = object property, inverse of hasModerator
+(o) object = asserted individual resource of class &apos;Panel Session&apos;
+
+(s): &apos;Steve Arnald&apos;     (p): isPanellistOf      (o): panelsession4
+                                                
+Legend:
+(s) subject = asserted individual resource of class Participant, and inferred individual of subclass Panellist
+(p) predicate = object property, inverse of hasPanellist
+(o) object = asserted individual resource of class &apos;Panel Session&apos;</skos:example>
     </owl:Class>
     
 
@@ -1028,7 +1064,8 @@ Legend:
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#FilmScreening"/>
-        <rdfs:label>Multi Track Screening</rdfs:label>
+        <rdfs:label>MultiTrack Screening</rdfs:label>
+        <skos:definition xml:lang="en">It defines a film screening which was scheduled for two or more tracks.</skos:definition>
     </owl:Class>
     
 
@@ -1066,6 +1103,7 @@ Legend:
                 <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Panellist"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">If a &apos;Panel Session&apos; has both female and male panellists, then it is inferred as an &apos;Egalitarian Panel Session&apos;.</rdfs:comment>
         <rdfs:label xml:lang="en">Panel Session</rdfs:label>
         <skos:definition xml:lang="en">Debate event within the convention that takes place in an auditorium, and the participants can ask the panellists some questions.</skos:definition>
         <skos:example xml:lang="en">The triple below represents the inferred sentence &apos;Panel session 1 has as a panellist Ross Geller&apos;: 
@@ -1119,7 +1157,7 @@ Legend:
         <owl:hasKey rdf:parseType="Collection">
             <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name"/>
         </owl:hasKey>
-        <rdfs:comment xml:lang="en">Only a participant can be guest of honour in a ProgrammeItem, and it occur when a participant is related to a ProgrammeItem by the property isGuestOfHonourOf (infered as the inverse of the property hasGuestOfHonour).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Only a participant can be guest of honour in a &apos;Programme Item&apos;, and it occur when a Participant is related to a &apos;Programme Item&apos; by the property isGuestOfHonourOf (infered as the inverse of the property hasGuestOfHonour).</rdfs:comment>
         <rdfs:label xml:lang="en">Participant</rdfs:label>
         <skos:definition xml:lang="en">According to the Cambridge Dictionary, it is &apos;a person who takes part in or becomes involved in a particular activity&apos;.</skos:definition>
         <skos:example xml:lang="en">The triple below represents the asserted sentence &apos;Person1&apos; name is Carl Sagan&apos;:  
@@ -1167,7 +1205,11 @@ Legend:
 
     <!-- http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItemByDuration -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItemByDuration"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItemByDuration">
+        <rdfs:label xml:lang="en">Programme Item by Duration</rdfs:label>
+        <skos:definition xml:lang="en">It defines a &apos;Programme Item&apos; according to its duration.</skos:definition>
+        <skos:example xml:lang="en">If a &apos;Programme Item&apos; has duration equals or less than 90 minutes, it is inferred as a &apos;Short Duration Item&apos;. Otherwise, if it has more than 90 minutes of duration, it is inferred as &apos;Long Duration Item&apos;.</skos:example>
+    </owl:Class>
     
 
 
@@ -1175,16 +1217,17 @@ Legend:
 
     <owl:Class rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Reading">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItem"/>
+        <rdfs:comment xml:lang="en">If the Reading has at least one &apos;Guest of honour&apos;, then it is inferred as a &apos;Guest Reading&apos;.</rdfs:comment>
         <rdfs:label xml:lang="en">Reading</rdfs:label>
         <skos:definition xml:lang="en">Slot in the convention programme for the participants to read science fiction books and comics.</skos:definition>
-        <skos:example xml:lang="en">The triple below represents the inferred sentence &apos;Reading 1 has as the guest of honour Carl Sagan&apos;:
+        <skos:example xml:lang="en">The triple below represents the inferred sentence &apos;Reading 1 is on Academic Track&apos;:
 
-(s): reading1     (p): hasGuestOfHonour     (o): &apos;Carl Sagan&apos; 
+(s): reading1     (p): onTrack     (o): AcademicTrack
                                                 
 Legend:
 (s) subject = asserted individual resource of class Reading
 (p) predicate = object property
-(o) object = asserted individual resource of class Person, and inferred individual of subclass &apos;Guest of honour&apos;</skos:example>
+(o) object = asserted individual resource of class Track</skos:example>
     </owl:Class>
     
 
@@ -1227,6 +1270,8 @@ Legend:
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ProgrammeItemByDuration"/>
+        <rdfs:label xml:lang="en">Short Duration Item</rdfs:label>
+        <skos:definition xml:lang="en">It defines, by inference, a &apos;Programme Item&apos; that has more than 90 minutes in duration.</skos:definition>
     </owl:Class>
     
 
@@ -1365,6 +1410,7 @@ Legend:
         <rdfs:comment xml:lang="en">For this ontology, a person has the general role of a participant. Then, Person and Participant are equivalent classes. See the class Participant and its subclasses.</rdfs:comment>
         <rdfs:label xml:lang="en">Person</rdfs:label>
         <skos:definition xml:lang="en">According to the Oxford Dictionary, &quot;a human being regarded as an individual&quot;, or &quot;a man, woman, or child&quot; for the Cambridge Dictionary.</skos:definition>
+        <skos:definition xml:lang="en">If a person has gender Male, then it is inferred as a &apos;Male Person&apos;. Otherwise, if a person has gender Female, it is inferred as a &apos;Female Person&apos;.</skos:definition>
     </owl:Class>
     
 

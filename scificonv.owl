@@ -2150,6 +2150,7 @@ Legend:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person10">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <attendsTo rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#workshop1"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Karen Cars</foaf:name>
@@ -2187,6 +2188,9 @@ Legend:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person13">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <attendsTo rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#film10"/>
+        <attendsTo rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#film4"/>
+        <attendsTo rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#film8"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#ScienceTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phoebe Buffay</foaf:name>
@@ -2247,6 +2251,10 @@ Legend:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person18">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <attendsTo rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#panelsession3"/>
+        <attendsTo rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#reading1"/>
+        <attendsTo rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#talk2"/>
+        <attendsTo rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#talk4"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#PoliticsTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Barney Stinson</foaf:name>
@@ -2259,6 +2267,8 @@ Legend:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person19">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <attendsTo rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#workshop2"/>
+        <attendsTo rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#workshop3"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#PoliticsTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Female"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lily Aldrin</foaf:name>
@@ -2318,6 +2328,8 @@ Legend:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#person23">
         <rdf:type rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Participant"/>
+        <attendsTo rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#panelsession1"/>
+        <attendsTo rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#talk4"/>
         <enrolledOnTrack rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#AcademicTrack"/>
         <hasGender rdf:resource="http://www.semanticweb.org/doug/ontologies/2018/6/scificonv#Male"/>
         <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cameron Tucker</foaf:name>
